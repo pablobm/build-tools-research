@@ -5,7 +5,7 @@
   "author": "Pablo Brasero <pablo@pablobm.com>",
   "license": "Unlicense",
   "scripts": {
-    "build": "broccoli build dist"
+    "build": "rm -rf dist/ && broccoli build dist"
   },
   "dependencies": {
     "broccoli": "^1.1.0",
