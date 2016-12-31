@@ -1,12 +1,12 @@
-This example requires the Broccoli CLI. Install it with:
+Install dependencies with:
 
 ```
-$ yarn global add broccoli-cli
+$ yarn
 ```
 
 Run the build with:
 
 ```
-$ broccoli build dist
+$ yarn run build
 ```
 
