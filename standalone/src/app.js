@@ -1,1 +1,3 @@
-console.log("app.js")
+import { log } from 'utils';
+
+log("app.js");
