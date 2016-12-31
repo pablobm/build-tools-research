@@ -1,11 +1,11 @@
-var esTranspiler = require('broccoli-babel-transpiler');
+var babelTranspiler = require('broccoli-babel-transpiler');
 var concat = require('broccoli-concat');
 var MergeTrees = require('broccoli-merge-trees');
 
 var vendorTree = 'external';
 var srcTree = 'src';
 
-var transpiledSrcTree = esTranspiler(srcTree, {
+var transpiledSrcTree = babelTranspiler(srcTree, {
   moduleIds: true,
   modules: 'amd',
 });
