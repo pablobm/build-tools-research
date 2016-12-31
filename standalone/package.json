@@ -3,5 +3,8 @@
   "version": "1.0.0",
   "description": "A example of use of Broccoli, the asset pipeline",
   "author": "Pablo Brasero <pablo@pablobm.com>",
-  "license": "Unlicense"
+  "license": "Unlicense",
+  "dependencies": {
+    "broccoli": "^1.1.0"
+  }
 }
