@@ -1,20 +1,30 @@
 var babelTranspiler = require('broccoli-babel-transpiler');
 var concat = require('broccoli-concat');
 var MergeTrees = require('broccoli-merge-trees');
+var Funnel = require('broccoli-funnel');
 
-var vendorTree = 'external';
-var srcTree = 'src';
+function pickSubtree(node, path) {
+  return new Funnel(node, { srcDir: path, destDir: path });
+}
+
+var root = '.';
+
+var externalTree = pickSubtree(root, 'external');
+var srcTree = pickSubtree(root, 'src');
 
 var transpiledSrcTree = babelTranspiler(srcTree, {
   moduleIds: true,
   modules: 'amd',
+  getModuleId: function(path) {
+    return path.replace(/^src\//, '');
+  },
 });
 
-var jsTree = new MergeTrees([vendorTree, transpiledSrcTree]);
+var jsTree = new MergeTrees([externalTree, transpiledSrcTree]);
 
 var appTree = concat(jsTree, {
-  headerFiles: ['vendor/loader.js'],
-  footerFiles: ['auto-start.js'],
+  headerFiles: ['external/vendor/loader.js'],
+  footerFiles: ['external/auto-start.js'],
   inputFiles: '**/*.js',
   outputFile: 'index.js',
 });
