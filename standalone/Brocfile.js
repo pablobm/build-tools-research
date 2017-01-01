@@ -10,23 +10,28 @@ function pickSubtree(node, path) {
 var root = '.';
 
 var externalTree = pickSubtree(root, 'external');
-var srcTree = pickSubtree(root, 'src');
+var inputJsTree = pickSubtree(root, 'src/js');
 
-var transpiledSrcTree = babelTranspiler(srcTree, {
+var transpiledTree = babelTranspiler(inputJsTree, {
   moduleIds: true,
   modules: 'amd',
   getModuleId: function(path) {
-    return path.replace(/^src\//, '');
+    return path.replace(/^src\/js\//, '');
   },
 });
 
-var jsTree = new MergeTrees([externalTree, transpiledSrcTree]);
+var jsTree = new MergeTrees([externalTree, transpiledTree]);
 
-var appTree = concat(jsTree, {
+var outputJsTree = concat(jsTree, {
   headerFiles: ['external/vendor/loader.js'],
   footerFiles: ['external/auto-start.js'],
   inputFiles: '**/*.js',
   outputFile: 'index.js',
 });
 
-module.exports = appTree;
+var outputHtmlTree = new Funnel(root, { srcDir: 'src', destDir: '.', include: ['index.html'] });
+
+module.exports = new MergeTrees([
+  outputHtmlTree,
+  outputJsTree,
+]);
