@@ -1,7 +1,7 @@
 var babelTranspiler = require('broccoli-babel-transpiler');
-var concat = require('broccoli-concat');
-var MergeTrees = require('broccoli-merge-trees');
-var Funnel = require('broccoli-funnel');
+var concat          = require('broccoli-concat');
+var Funnel          = require('broccoli-funnel');
+var MergeTrees      = require('broccoli-merge-trees');
 
 function pickSubtree(node, path) {
   return new Funnel(node, { srcDir: path, destDir: path });
