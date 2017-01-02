@@ -2,6 +2,7 @@ var babelTranspiler = require('broccoli-babel-transpiler');
 var concat          = require('broccoli-concat');
 var Funnel          = require('broccoli-funnel');
 var MergeTrees      = require('broccoli-merge-trees');
+var sass            = require('broccoli-sass-source-maps');
 
 function pickSubtree(node, path) {
   return new Funnel(node, { srcDir: path, destDir: path });
@@ -11,6 +12,7 @@ var root = '.';
 
 var externalTree = pickSubtree(root, 'external');
 var inputJsTree = pickSubtree(root, 'src/js');
+var inputScssTree = pickSubtree(root, 'src/styles');
 
 var transpiledTree = babelTranspiler(inputJsTree, {
   moduleIds: true,
@@ -29,9 +31,12 @@ var outputJsTree = concat(jsTree, {
   outputFile: 'index.js',
 });
 
+var outputCssTree = sass([inputScssTree], 'src/styles/app.scss', 'index.css', {});
+
 var outputHtmlTree = new Funnel(root, { srcDir: 'src', destDir: '.', include: ['index.html'] });
 
 module.exports = new MergeTrees([
+  outputCssTree,
   outputHtmlTree,
   outputJsTree,
 ]);
