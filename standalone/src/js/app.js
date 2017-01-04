@@ -1,3 +1,3 @@
-import { log } from 'utils';
+import { log } from './utils';
 
 log("app.js");
