@@ -1,5 +1,11 @@
-const log = (...args) => {
-  console.log(...args);
+import $ from 'jquery';
+
+const duplicate = (target) => {
+  $(target)
+    .clone()
+    .hide()
+    .appendTo(target)
+    .show(3000);
 };
 
-export default { log };
+export default { duplicate };

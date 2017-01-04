@@ -11,7 +11,8 @@ var inputScssTree = 'src/styles';
 var transpiledTree = babelTranspiler(inputJsTree);
 var outputJsTree = watchify(transpiledTree, {
   browserify: {
-    entries: ['app.js']
+    entries: ['app.js'],
+    paths: [__dirname + '/node_modules'],
   },
   outputFile: 'index.js',
 });

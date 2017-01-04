@@ -1,3 +1,3 @@
-import { log } from './utils';
+import { duplicate } from './utils';
 
-log("app.js");
+duplicate('.welcome');
