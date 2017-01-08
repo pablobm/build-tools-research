@@ -2,11 +2,14 @@ var babelTranspiler = require('broccoli-babel-transpiler');
 var Funnel          = require('broccoli-funnel');
 var MergeTrees      = require('broccoli-merge-trees');
 var sass            = require('broccoli-sass-source-maps');
+var source          = require('broccoli-source');
 var watchify        = require('broccoli-watchify');
 
-var root = '.';
-var inputJsTree = 'src/js';
-var inputScssTree = 'src/styles';
+var WatchedDir = source.WatchedDir;
+
+var root = new WatchedDir('.');
+var inputJsTree = new WatchedDir('src/js');
+var inputScssTree = new WatchedDir('src/styles');
 
 var transpiledTree = babelTranspiler(inputJsTree);
 var outputJsTree = watchify(transpiledTree, {
