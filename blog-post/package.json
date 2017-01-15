@@ -1,0 +1,13 @@
+{
+  "name": "blog-post",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "broccoli": "^1.1.0",
+    "broccoli-cli": "^1.0.0"
+  },
+  "scripts": {
+    "build": "rm -rf dist/ && broccoli build dist"
+  }
+}
