@@ -1,0 +1,8 @@
+.load-indicator {
+  font-weight: bold;
+  color: red;
+
+  &__active {
+    color: green;
+  }
+}
