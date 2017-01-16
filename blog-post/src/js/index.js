@@ -1,6 +1,3 @@
-const print = (...args) => {
-  console.log(...args);
-};
+import { print } from './utils';
 
-print("output from app.js, in ES6");
-
+print("output from app.js, in ES6, with modules");
