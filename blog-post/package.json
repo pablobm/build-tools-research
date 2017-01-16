@@ -5,9 +5,11 @@
   "license": "MIT",
   "dependencies": {
     "broccoli": "^1.1.0",
-    "broccoli-cli": "^1.0.0"
+    "broccoli-cli": "^1.0.0",
+    "broccoli-source": "^1.1.0"
   },
   "scripts": {
-    "build": "rm -rf dist/ && broccoli build dist"
+    "build": "rm -rf dist/ && broccoli build dist",
+    "serve": "broccoli serve"
   }
 }
