@@ -1,3 +1,3 @@
-import { print } from './utils';
+import { activateIndicator } from './utils';
 
-print("output from app.js, in ES6, with modules");
+activateIndicator();

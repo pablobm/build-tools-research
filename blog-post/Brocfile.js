@@ -12,6 +12,10 @@ var outputHtml = inputHtml;
 var inputJs = new WatchedDir('src/js');
 var transpiledJs = babelTranspiler(inputJs);
 var outputJs = watchify(transpiledJs, {
+  browserify: {
+    entries: ['index.js'],
+    paths: [__dirname + '/node_modules'],
+  },
   outputFile: 'index.js',
 });
 
