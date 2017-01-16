@@ -5,6 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "broccoli": "^1.1.0",
+    "broccoli-babel-transpiler": "^5.6.2",
     "broccoli-cli": "^1.0.0",
     "broccoli-merge-trees": "^1.2.1",
     "broccoli-sass": "^0.7.0",
