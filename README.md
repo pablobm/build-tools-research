@@ -1,6 +1,6 @@
 # Pablo's research on build tools
 
-This is just a playground for me, ([Pablo](https://github.com/pablobm)),
+This is just a playground for me ([Pablo](https://github.com/pablobm))
 to experiment with JavaScript build tools. Check out each
 folder for more information.
 
