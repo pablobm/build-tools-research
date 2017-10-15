@@ -6,11 +6,21 @@ var watchify        = require('broccoli-watchify');
 
 var WatchedDir = source.WatchedDir;
 
+var BABEL_OPTIONS = {
+  presets: [
+    ['env', {
+      targets: {
+        browsers: 'last 2 versions',
+      },
+    }],
+  ],
+};
+
 var inputHtml = new WatchedDir('src/html');
 var outputHtml = inputHtml;
 
 var inputJs = new WatchedDir('src/js');
-var transpiledJs = babelTranspiler(inputJs);
+var transpiledJs = babelTranspiler(inputJs, BABEL_OPTIONS);
 var outputJs = watchify(transpiledJs, {
   browserify: {
     entries: ['index.js'],
