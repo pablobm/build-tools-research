@@ -10,7 +10,7 @@ const print = (...args) => {
   console.log(...args);
 };
 
-export default {
+export {
   activateIndicator,
   print,
 };
