@@ -1,0 +1,11 @@
+{
+  "name": "rollup-example",
+  "version": "1.0.0",
+  "description": "An example of use of Rollup.js, the module bundler",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pablo Brasero <pablo@pablobm.com>",
+  "license": "Unlicense"
+}
