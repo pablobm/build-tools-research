@@ -1,16 +1,11 @@
 import $ from 'jquery';
 
-const activateIndicator = () => {
+export const activateIndicator = () => {
   $('.load-indicator')
     .addClass('load-indicator__active')
     .text("YES");
 }
 
-const print = (...args) => {
+export const print = (...args) => {
   console.log(...args);
-};
-
-export {
-  activateIndicator,
-  print,
 };
