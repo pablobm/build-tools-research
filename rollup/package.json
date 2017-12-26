@@ -9,6 +9,7 @@
   "author": "Pablo Brasero <pablo@pablobm.com>",
   "license": "Unlicense",
   "dependencies": {
-    "rollup": "^0.53.0"
+    "rollup": "^0.53.0",
+    "rollup-plugin-node-resolve": "^3.0.0"
   }
 }
