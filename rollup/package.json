@@ -1,0 +1,18 @@
+{
+  "name": "rollup-example",
+  "version": "1.0.0",
+  "description": "An example of use of Rollup.js, the module bundler",
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -c --watch"
+  },
+  "author": "Pablo Brasero <pablo@pablobm.com>",
+  "license": "Unlicense",
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "rollup": "^0.53.0",
+    "rollup-plugin-commonjs": "^8.2.6",
+    "rollup-plugin-node-resolve": "^3.0.0"
+  }
+}
