@@ -7,5 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Pablo Brasero <pablo@pablobm.com>",
-  "license": "Unlicense"
+  "license": "Unlicense",
+  "dependencies": {
+    "rollup": "^0.53.0"
+  }
 }
