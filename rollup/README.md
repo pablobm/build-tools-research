@@ -19,3 +19,9 @@ Run the build with:
 ```
 $ yarn run build
 ```
+
+Build as you save with:
+
+```
+$ yarn run watch
+```
