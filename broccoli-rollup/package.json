@@ -13,6 +13,7 @@
     "broccoli-babel-transpiler": "^5.6.1",
     "broccoli-cli": "^1.0.0",
     "broccoli-merge-trees": "^1.2.1",
+    "broccoli-rollup": "^2.0.0",
     "broccoli-sass": "^0.7.0",
     "broccoli-sass-source-maps": "^2.0.0",
     "broccoli-source": "^1.1.0",
