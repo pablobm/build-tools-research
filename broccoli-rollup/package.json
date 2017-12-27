@@ -1,0 +1,22 @@
+{
+  "name": "broccoli-example",
+  "version": "1.0.0",
+  "description": "An example of use of Broccoli, the asset pipeline",
+  "author": "Pablo Brasero <pablo@pablobm.com>",
+  "license": "Unlicense",
+  "scripts": {
+    "build": "rm -rf dist/ && broccoli build dist",
+    "serve": "broccoli serve"
+  },
+  "dependencies": {
+    "broccoli": "^1.1.0",
+    "broccoli-babel-transpiler": "^5.6.1",
+    "broccoli-cli": "^1.0.0",
+    "broccoli-merge-trees": "^1.2.1",
+    "broccoli-sass": "^0.7.0",
+    "broccoli-sass-source-maps": "^2.0.0",
+    "broccoli-source": "^1.1.0",
+    "broccoli-watchify": "^1.0.1",
+    "jquery": "^3.1.1"
+  }
+}
